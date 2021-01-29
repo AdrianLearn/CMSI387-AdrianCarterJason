@@ -31,12 +31,6 @@ Jason       | Not yet implemented.
 ### Question 4
 #### Suppose thread A goes through a loop 100 times, each time performing one disk I/O operation, taking 10 milliseconds, and then some computation, taking 1 millisecond. While each 10-millisecond disk operation is in progress, thread A cannot make any use of the processor. Thread B runs for 1 second, purely in the processor, with no I/O. One millisecond of processor time is spent each time the processor switches threads; other than this switching cost, there is no problem with the processor working on thread B during one of thread A's I/O operations. (The processor and disk drive do not contend for memory access bandwidth, for example.)
 
-Thread A: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)]
-
-Thread B: 1s
-
-Switch: 1 ms
-
 #### a. Suppose the processor and disk work purely on thread A until its completion, and then the processor switches to thread B and runs all of that thread. What will the total elapsed time be?
 
 Thread A Completion Time: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)] = 1100 ms
@@ -48,7 +42,7 @@ Total Switch Time: 1 ms
 Total Time: **2101 ms**
 
 #### b. Suppose the processor starts out working on thread A, but every time thread A performs a disk operation, the processor switches to B during the operation and then back to A upon the disk operation's completion. What will the total elapsed time be?
-> It takes 10 ms for thread A to complete a disk I/O operation. Every time this operation starts, the processor switches to B, costing 1 ms. When thread A's operation finishes, the processor switches back to thread A, costing 1 ms. This switch will add 2 ms to every thread A operation. Thread B's operation, however,  is concurrent with thread A. Thread B has effectively 10 ms per operation of thread A to process, as the switch occurs after the thread A operation starts, and switches back after it finishes. We can model this with the following equations:
+> It takes 10 ms for thread A to coSplete a disk I/O operation. Every time this operation starts, the processor switches to B, costing 1 ms. When thread A's operation finishes, the processor switches back to thread A, costing 1 ms. This switch will add 2 ms to every thread A operation. Thread B's operation, however,  is concurrent with thread A. Thread B has effectively 10 ms per operation of thread A to process, as the switch occurs after the thread A operation starts, and switches back after it finishes. We can model this with the following equations:
 
 Thread A Completion Time: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)] = 1100 ms
 
@@ -65,7 +59,7 @@ Total Time: **1300 ms**
 ### Question 5
 ####  Find and read the documentation for pthread_cancel(). Then, using your "C" programming environment, use the information and the model provided in Figure 2.4 on page 26 of the text book to write a program in which the initial (main) thread creates a second thread. The main thread should sit on a read call of some kind, waiting to read input from the keyboard, waiting until the user presses the Enter key. At that point, it should kill off the second thread and print out a message reporting that it has done so. Meanwhile, the second thread should be in an infinite loop, each time around sleeping five seconds and then printing out a message. Try running your program. Can the sleeping thread print its  periodic messages while the main thread is waiting for keyboard input? Can the main thread read input, kill the sleeping thread, and print a message while the sleeping thread is in the early part of one of its five-second sleeps?
 
-placeholder
+> See **p_thread_cancel.c.** The sleeping thread can print its periodic messages while the main thread is waiting for keyboard input. The main thread can also read input, kill the sleeping thread, and print a message while the sleeping thread is in the early part of its five-second sleeps.
 
 ### Question 6
 #### Suppose a system has three threads (T1, T2, and T3) that are all available to run at time 0 and need one, two, and three seconds of processing, respectively. Suppose each thread is run to completion before starting another. Draw six different Gantt charts, one for each possible order the threads can be run in. For each chart, compute the turnaround time of each thread; that is, the time elapsed from when it was ready (time 0) until it is complete. Also, compute the average turnaround time for each order. Which order has the shortest average turnaround time? What is the name of the scheduling policy that produces this order?
