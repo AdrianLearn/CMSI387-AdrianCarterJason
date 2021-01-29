@@ -58,7 +58,7 @@ It takes 10 ms for thread A to complete a disk I/O operation. Every time this op
 This switch will add 2 ms to every thread A operation. Thread B's operation, however,  is concurrent with thread A. Thread B has effectively 10 ms per operation of thread A to process, as the switch occurs after the thread A operation starts, and switches back after it finishes. We can model this with the following equations:
 
 Thread A Completion Time: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)] = 1100 ms
-Thread B Completion Time: 10 ms (time per thread A operation) * 100 (thread A operations to complete) = <s>1000 ms<s> (concurrent with thread A)
+Thread B Completion Time: 10 ms (time per thread A operation) * 100 (thread A operations to complete) = <s>1000 ms</s> (concurrent with thread A)
 Total Switch Time: 100 (iterations) * 2 ms (switch time, given by switch from A to B, B to A) (not concurrent) = 200 ms
 Total Time: 1300 ms
 
