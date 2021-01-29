@@ -43,28 +43,35 @@ Adrian: I am looking foward to learning more about how operating systems functio
 #### Suppose thread A goes through a loop 100 times, each time performing one disk I/O operation, taking 10 milliseconds, and then some computation, taking 1 millisecond. While each 10-millisecond disk operation is in progress, thread A cannot make any use of the processor. Thread B runs for 1 second, purely in the processor, with no I/O. One millisecond of processor time is spent each time the processor switches threads; other than this switching cost, there is no problem with the processor working on thread B during one of thread A's I/O operations. (The processor and disk drive do not contend for memory access bandwidth, for example.)
 
 Thread A: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)]
+
 Thread B: 1s
+
 Switch: 1 ms
 
 #### a. Suppose the processor and disk work purely on thread A until its completion, and then the processor switches to thread B and runs all of that thread. What will the total elapsed time be?
 
 Thread A Completion Time: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)] = 1100 ms
+
 Thread B Completion Time: 1s = 1s = 1000 ms
+
 Total Switch Time: 1 ms
+
 Total Time: 2101 ms
 
 #### b. Suppose the processor starts out working on thread A, but every time thread A performs a disk operation, the processor switches to B during the operation and then back to A upon the disk operation's completion. What will the total elapsed time be?
-It takes 10 ms for thread A to complete a disk I/O operation. Every time this operation starts, the processor switches to B, costing 1 ms. When thread A's operation finishes, the processor switches back to thread A, costing 1 ms.
-This switch will add 2 ms to every thread A operation. Thread B's operation, however,  is concurrent with thread A. Thread B has effectively 10 ms per operation of thread A to process, as the switch occurs after the thread A operation starts, and switches back after it finishes. We can model this with the following equations:
+> It takes 10 ms for thread A to complete a disk I/O operation. Every time this operation starts, the processor switches to B, costing 1 ms. When thread A's operation finishes, the processor switches back to thread A, costing 1 ms. This switch will add 2 ms to every thread A operation. Thread B's operation, however,  is concurrent with thread A. Thread B has effectively 10 ms per operation of thread A to process, as the switch occurs after the thread A operation starts, and switches back after it finishes. We can model this with the following equations:
 
 Thread A Completion Time: 100(iterations) * [10 ms(Disk I/O operation) + 1 ms (computation)] = 1100 ms
+
 Thread B Completion Time: 10 ms (time per thread A operation) * 100 (thread A operations to complete) = <s>1000 ms</s> (concurrent with thread A)
+
 Total Switch Time: 100 (iterations) * 2 ms (switch time, given by switch from A to B, B to A) (not concurrent) = 200 ms
+
 Total Time: 1300 ms
 
 #### c. In your opinion, which do you think is more efficient, and why?
 
-According to the calculations, the switch method is much more efficient: it takes much less time to complete. This saved time can add up when considering larger calculations e.g. an operation with millions of iterations. The switch method utilizes the processor more efficiently; by calculating thread B during the time when thread A cannot make use of the processor, this method saves 8 ms (10 ms thread B calculation - 2 ms switch time) per iteration.
+> According to the calculations, the switch method is much more efficient: it takes much less time to complete. This saved time can add up when considering larger calculations e.g. an operation with millions of iterations. The switch method utilizes the processor more efficiently; by calculating thread B during the time when thread A cannot make use of the processor, this method saves 8 ms (10 ms thread B calculation - 2 ms switch time) per iteration.
 
 ### Question 5
 ####  Find and read the documentation for pthread_cancel(). Then, using your "C" programming environment, use the information and the model provided in Figure 2.4 on page 26 of the text book to write a program in which the initial (main) thread creates a second thread. The main thread should sit on a read call of some kind, waiting to read input from the keyboard, waiting until the user presses the Enter key. At that point, it should kill off the second thread and print out a message reporting that it has done so. Meanwhile, the second thread should be in an infinite loop, each time around sleeping five seconds and then printing out a message. Try running your program. Can the sleeping thread print its  periodic messages while the main thread is waiting for keyboard input? Can the main thread read input, kill the sleeping thread, and print a message while the sleeping thread is in the early part of one of its five-second sleeps?
