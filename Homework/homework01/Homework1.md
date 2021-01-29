@@ -64,8 +64,6 @@ Total Time: **1300 ms**
 #include <unistd.h>
 #include <stdio.h>
 
-//gcc -o p_thread_cancel p_thread_cancel.c -lpthread && ./p_thread_cancel
-
 void* child(void* p) {
     while(1) {
         sleep(5);
@@ -90,7 +88,6 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    //sleep(5);
     printf("THE CHILD (THREAD) HAS BEEN ELIMINATED.\n");
     pthread_cancel(child_thread);
     pthread_exit(NULL);
