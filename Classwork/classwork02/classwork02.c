@@ -3,18 +3,16 @@
 #include <stdlib.h>
 const int SIZE = 25;
 int numbers[SIZE];
-//I actually lost brain cells trying to count the number of 7's in
-//this string I dont think it's that hard but I couldn't figure it 
-//out
-int countSevens(const char *str){
-  int count = 0;
-  const char *p = str;
-  for(int i = 0; i < SIZE; i++){
-    if(*p == 7){
+
+void count_sevens(char *seven) {
+  char c = '7';
+  int i, count = 0;
+  for(i = 0; i < strlen(seven); i++) {
+    if (seven[i] == c) {
       count++;
     }
   }
-  return count;
+  printf("Seven occurs %d times \n", count);
 }
 int add(int arr[]){
   int total = 0;
@@ -33,7 +31,7 @@ int add(int arr[]){
     }
   }
   printf("Total: %d Average: %d String Version: %s\n", total, total/numCount, numString);
-  printf("Number of 7's: %d\n", countSevens(numString));
+  count_sevens(numString);
   return total;
 }
 
