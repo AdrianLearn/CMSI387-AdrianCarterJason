@@ -114,19 +114,14 @@ int main()
 
     printf("Input your name: ");
     scanf("%s", name);
-
     printf("Input your age: ");
     scanf("%d", &age);
-
     printf("Input your class year: ");
     scanf("%s", class_year);
-
     printf("What is your favorite food: ");
     scanf("%s", food);
-
     printf("What city do you live in: ");
     scanf("%s", city);
-
     printf("What is your favorite number: ");
     scanf("%d", &fav_number);
 
