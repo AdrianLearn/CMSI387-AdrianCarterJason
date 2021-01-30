@@ -12,11 +12,10 @@ void count_sevens(char *seven) {
       count++;
     }
   }
-  printf("Seven occurs %d times \n", count);
+  printf("Seven Occurs: %d times \n", count);
 }
 int add(int arr[]){
   int total = 0;
-  int sevenCounter = 0;
   int numCount = 0;
   char numString[256];
   char temp[100];
@@ -30,7 +29,7 @@ int add(int arr[]){
     strcat(numString,temp);
     }
   }
-  printf("Total: %d Average: %d String Version: %s\n", total, total/numCount, numString);
+  printf("Total: %d\nAverage: %d\nString Version: %s\n", total, total/numCount, numString);
   count_sevens(numString);
   return total;
 }
