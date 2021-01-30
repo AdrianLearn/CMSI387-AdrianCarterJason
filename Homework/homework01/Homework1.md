@@ -105,4 +105,32 @@ Carter smellz
 ### Question 7
 #### Google the C standard library API and find out how to get information from the command line by using a printf() call to display a prompt, then another call [which you will look up] to get the user input. Write a program in C to prompt the user demographic information including name, age, class year, and any three other data times you wish. Structure the program as a call-and-response program such that each data item is a single question with a single answer. When all data has been obtained, display the data on the console. Each data item must be on a separate line, and it must be appropriately labeled. The output must be done using a single printf() statement.
 
-Done
+```C
+#include <stdio.h>
+int main()
+{
+    char name[20], food[20], city[20], class_year[20];
+    int age, fav_number;
+
+    printf("Input your name: ");
+    scanf("%s", name);
+
+    printf("Input your age: ");
+    scanf("%d", &age);
+
+    printf("Input your class year: ");
+    scanf("%s", class_year);
+
+    printf("What is your favorite food: ");
+    scanf("%s", food);
+
+    printf("What city do you live in: ");
+    scanf("%s", city);
+
+    printf("What is your favorite number: ");
+    scanf("%d", &fav_number);
+
+    printf("Name: %s\nAge: %d\nClass Year: %s\nFavorite Food: %s\nCity: %s\nFavorite Number: %d\n", name, age, class_year, food, city, fav_number);
+    return 0;
+}
+```
