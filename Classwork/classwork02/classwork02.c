@@ -3,7 +3,9 @@
 #include <stdlib.h>
 const int SIZE = 25;
 int numbers[SIZE];
-
+//I actually lost brain cells trying to count the number of 7's in
+//this string I dont think it's that hard but I couldn't figure it 
+//out
 int countSevens(const char *str){
   int count = 0;
   const char *p = str;
