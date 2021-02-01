@@ -102,12 +102,12 @@ int main(int argc, char *argv[]) {
 
 
 <div align="center">
-**T1, T2, T3**: 0, 1, 3 | Total: *4* Seconds<br>
-**T1, T3, T2**: 0, 1, 4 | Total: *5* Seconds<br>
-**T2, T1, T3**: 0, 2, 3 | Total: *5* Seconds<br>
-**T2, T3, T1**: 0, 2, 5 | Total: *7* Seconds<br>
-**T3, T1, T2**: 0, 3, 4 | Total: *7* Seconds<br>
-**T3, T2, T1**: 0, 3, 5 | Total: *8* Seconds<br>
+<b>T1, T2, T3</b>: 0, 1, 3 | Total: <i>4</i> Seconds<br>
+<b>T1, T3, T2</b>: 0, 1, 4 | Total: <i>5</i> Seconds<br>
+<b>T2, T1, T3</b>: 0, 2, 3 | Total: <i>5</i> Seconds<br>
+<b>T2, T3, T1</b>: 0, 2, 5 | Total: <i>7</i> Seconds<br>
+<b>T3, T1, T2</b>: 0, 3, 4 | Total: <i>7</i> Seconds<br>
+<b>T3, T2, T1</b>: 0, 3, 5 | Total: <i>8</i> Seconds<br>
 <br>
 <img src="https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6" />
 </div>
