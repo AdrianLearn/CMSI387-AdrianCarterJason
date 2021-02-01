@@ -100,7 +100,19 @@ int main(int argc, char *argv[]) {
 ### Question 6
 #### Suppose a system has three threads (T1, T2, and T3) that are all available to run at time 0 and need one, two, and three seconds of processing, respectively. Suppose each thread is run to completion before starting another. Draw six different Gantt charts, one for each possible order the threads can be run in. For each chart, compute the turnaround time of each thread; that is, the time elapsed from when it was ready (time 0) until it is complete. Also, compute the average turnaround time for each order. Which order has the shortest average turnaround time? What is the name of the scheduling policy that produces this order?
 
-Carter smellz
+
+T1, T2, T3: 1, 3, 6: 10 seconds / 3 = 10/3 seconds
+T1, T3, T2: 1, 4, 6: 11 seconds / 3 = 11/3 seconds
+T2, T1, T3: 2, 3, 6: 11 seconds / 3 = 11/3 seconds
+T2, T3, T1: 2, 5, 6: 13 seconds / 3 = 13/3 seconds
+T3, T1, T2: 3, 4, 6: 13 seconds / 3 = 13/3 seconds
+T3, T2, T1: 3, 5, 6: 14 seconds / 3 = 14/3 seconds
+
+Turnaround time of each thread = 6 seconds
+{T1, T2, T3} has shortest average turnaround time at 10/3 seconds. 
+The name of the scheduling policy that produces this order is shortest job first scheduling. 
+
+
 
 ### Question 7
 #### Google the C standard library API and find out how to get information from the command line by using a printf() call to display a prompt, then another call [which you will look up] to get the user input. Write a program in C to prompt the user demographic information including name, age, class year, and any three other data times you wish. Structure the program as a call-and-response program such that each data item is a single question with a single answer. When all data has been obtained, display the data on the console. Each data item must be on a separate line, and it must be appropriately labeled. The output must be done using a single printf() statement.
