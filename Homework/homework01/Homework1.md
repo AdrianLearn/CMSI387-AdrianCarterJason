@@ -101,17 +101,18 @@ int main(int argc, char *argv[]) {
 #### Suppose a system has three threads (T1, T2, and T3) that are all available to run at time 0 and need one, two, and three seconds of processing, respectively. Suppose each thread is run to completion before starting another. Draw six different Gantt charts, one for each possible order the threads can be run in. For each chart, compute the turnaround time of each thread; that is, the time elapsed from when it was ready (time 0) until it is complete. Also, compute the average turnaround time for each order. Which order has the shortest average turnaround time? What is the name of the scheduling policy that produces this order?
 
 
-T1, T2, T3: 1, 3, 6: 10 seconds / 3 = 10/3 seconds
-T1, T3, T2: 1, 4, 6: 11 seconds / 3 = 11/3 seconds
-T2, T1, T3: 2, 3, 6: 11 seconds / 3 = 11/3 seconds
-T2, T3, T1: 2, 5, 6: 13 seconds / 3 = 13/3 seconds
-T3, T1, T2: 3, 4, 6: 13 seconds / 3 = 13/3 seconds
-T3, T2, T1: 3, 5, 6: 14 seconds / 3 = 14/3 seconds
+T1, T2, T3: 0, 1, 3 | Total: 4 Seconds 
+T1, T3, T2: 0, 1, 4 | Total: 5 Seconds 
+T2, T1, T3: 0, 2, 3 | Total: 5 Seconds 
+T2, T3, T1: 0, 2, 5 | Total: 7 Seconds 
+T3, T1, T2: 0, 3, 4 | Total: 7 Seconds 
+T3, T2, T1: 0, 3, 5 | Total: 8 Seconds
 
 Turnaround time of each thread = 6 seconds
-{T1, T2, T3} has shortest average turnaround time at 10/3 seconds. 
+{T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
+![Alt test]()
 
 
 ### Question 7
