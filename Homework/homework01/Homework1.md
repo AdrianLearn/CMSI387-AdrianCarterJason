@@ -112,7 +112,7 @@ Turnaround time of each thread = 6 seconds
 {T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
-![https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6]
+![https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6]()
 
 
 ### Question 7
