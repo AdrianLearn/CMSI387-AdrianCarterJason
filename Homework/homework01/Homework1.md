@@ -109,9 +109,9 @@ T2, T3, T1: 0, 2, 5 | Total: 7 Seconds<br>
 T3, T1, T2: 0, 3, 4 | Total: 7 Seconds<br>
 T3, T2, T1: 0, 3, 5 | Total: 8 Seconds<br>
 
-<img align="center">
-  ![alt text](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6)
-</img>
+<div align="center">
+  <img src="https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6" />
+</div>
 
 Turnaround time of each thread = 6 seconds
 {T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
