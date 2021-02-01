@@ -112,8 +112,7 @@ Turnaround time of each thread = 6 seconds
 {T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
-![alt text](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6)
-
+![](Question 6.png)
 
 ### Question 7
 #### Google the C standard library API and find out how to get information from the command line by using a printf() call to display a prompt, then another call [which you will look up] to get the user input. Write a program in C to prompt the user demographic information including name, age, class year, and any three other data times you wish. Structure the program as a call-and-response program such that each data item is a single question with a single answer. When all data has been obtained, display the data on the console. Each data item must be on a separate line, and it must be appropriately labeled. The output must be done using a single printf() statement.
