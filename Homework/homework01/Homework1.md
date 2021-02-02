@@ -114,7 +114,7 @@ int main(int argc, char *argv[]) {
 <br>
 
 
-{T1, T2, T3} has shortest average turnaround time at 10/3 seconds.
+{T1, T2, T3} has shortest average turnaround time at 10/3 seconds per thread.
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
 ### Question 7
