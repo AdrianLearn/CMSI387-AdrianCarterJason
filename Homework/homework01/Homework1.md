@@ -24,7 +24,7 @@ computations with controlled interactions.
 
 Team Member | Topic
 ----------- | ------------
-Carter      | I am most interested in learning about the interconnectivity of computers and how information created on one computer can end up on a computer across the world. I think its a brilliant development and one of the many modern wonders of our world: the ability to transmit information relatively instantaneously.
+Carter      | I am most interested in learning about the interconnectivity of computers and how information created on one computer can end up on a computer across the world. I think it is a brilliant development and one of the many modern wonders of our world: the ability to transmit information relatively instantaneously.
 Adrian      | I am looking foward to learning more about how operating systems function. Personally, I feel I have always taken an operating system for granted, without realizing what computers were like before Windows or MacOS. By learning more about how this system software will give me a greater understanding of what is going on exactly in a computer.
 Jason       | The topic that I think will be the most interesting is learning about middleware in general. Previous to hearing the title of this textbook, I had never heard of middleware. Im hoping that learning about this topic and others like it will deepen my understanding of computer systems and the connectivity of everything going inside each and every computational device. I also only have a surface level understanding of the complexities of things like API's, so i'm hoping that my gaps of knowlege will be filled. Learning about these different topics will help make me a more well rounded and stronger software engineer.
 
