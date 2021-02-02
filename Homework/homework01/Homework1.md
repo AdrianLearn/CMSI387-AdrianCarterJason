@@ -102,19 +102,19 @@ int main(int argc, char *argv[]) {
 
 
 <div align="center">
-<b>T1, T2, T3</b>: 0, 1, 3 | Total: <i>4 Seconds</i><br>
-<b>T1, T3, T2</b>: 0, 1, 4 | Total: <i>5 Seconds</i><br>
-<b>T2, T1, T3</b>: 0, 2, 3 | Total: <i>5 Seconds</i><br>
-<b>T2, T3, T1</b>: 0, 2, 5 | Total: <i>7 Seconds</i><br>
-<b>T3, T1, T2</b>: 0, 3, 4 | Total: <i>7 Seconds</i><br>
-<b>T3, T2, T1</b>: 0, 3, 5 | Total: <i>8 Seconds</i><br>
+<b>T1, T2, T3</b>: 0, 1, 3 | Ave: <i>10/3 Seconds</i><br>
+<b>T1, T3, T2</b>: 0, 1, 4 | Ave: <i>11/3 Seconds</i><br>
+<b>T2, T1, T3</b>: 0, 2, 3 | Ave: <i>11/3 Seconds</i><br>
+<b>T2, T3, T1</b>: 0, 2, 5 | Ave: <i>13/3 Seconds</i><br>
+<b>T3, T1, T2</b>: 0, 3, 4 | Ave: <i>13/3 Seconds</i><br>
+<b>T3, T2, T1</b>: 0, 3, 5 | Ave: <i>14/3 Seconds</i><br>
 <br>
 <img src="https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6" />
 </div>
 <br>
 
-Turnaround time of each thread = 6 seconds
-{T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
+
+{T1, T2, T3} has shortest average turnaround time at 10/3 seconds.
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
 ### Question 7
