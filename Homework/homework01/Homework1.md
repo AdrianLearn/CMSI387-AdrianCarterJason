@@ -24,7 +24,7 @@ computations with controlled interactions.
 
 Team Member | Topic
 ----------- | ------------
-Carter      | I am most interested in learning about the interconnectivity of computers and how information created on one computer can end up on a computer across the world. I think its a brilliant development and one of the many modern wonders of our world: the ability to transmit information relatively instantaneously.
+Carter      | I am most interested in learning about the interconnectivity of computers and how information created on one computer can end up on a computer across the world. I think it is a brilliant development and one of the many modern wonders of our world: the ability to transmit information relatively instantaneously.
 Adrian      | I am looking foward to learning more about how operating systems function. Personally, I feel I have always taken an operating system for granted, without realizing what computers were like before Windows or MacOS. By learning more about how this system software will give me a greater understanding of what is going on exactly in a computer.
 Jason       | The topic that I think will be the most interesting is learning about middleware in general. Previous to hearing the title of this textbook, I had never heard of middleware. Im hoping that learning about this topic and others like it will deepen my understanding of computer systems and the connectivity of everything going inside each and every computational device. I also only have a surface level understanding of the complexities of things like API's, so i'm hoping that my gaps of knowlege will be filled. Learning about these different topics will help make me a more well rounded and stronger software engineer.
 
@@ -101,17 +101,20 @@ int main(int argc, char *argv[]) {
 #### Suppose a system has three threads (T1, T2, and T3) that are all available to run at time 0 and need one, two, and three seconds of processing, respectively. Suppose each thread is run to completion before starting another. Draw six different Gantt charts, one for each possible order the threads can be run in. For each chart, compute the turnaround time of each thread; that is, the time elapsed from when it was ready (time 0) until it is complete. Also, compute the average turnaround time for each order. Which order has the shortest average turnaround time? What is the name of the scheduling policy that produces this order?
 
 
-T1, T2, T3: 0, 1, 3 | Total: 4 Seconds<br>
-T1, T3, T2: 0, 1, 4 | Total: 5 Seconds<br>
-T2, T1, T3: 0, 2, 3 | Total: 5 Seconds<br>
-T2, T3, T1: 0, 2, 5 | Total: 7 Seconds<br>
-T3, T1, T2: 0, 3, 4 | Total: 7 Seconds<br>
-T3, T2, T1: 0, 3, 5 | Total: 8 Seconds<br>
+<div align="center">
+<b>T1, T2, T3</b>: 0, 1, 3 | Ave: <i>10/3 Seconds</i><br>
+<b>T1, T3, T2</b>: 0, 1, 4 | Ave: <i>11/3 Seconds</i><br>
+<b>T2, T1, T3</b>: 0, 2, 3 | Ave: <i>11/3 Seconds</i><br>
+<b>T2, T3, T1</b>: 0, 2, 5 | Ave: <i>13/3 Seconds</i><br>
+<b>T3, T1, T2</b>: 0, 3, 4 | Ave: <i>13/3 Seconds</i><br>
+<b>T3, T2, T1</b>: 0, 3, 5 | Ave: <i>14/3 Seconds</i><br>
+<br>
+<img src="https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6" />
+</div>
+<br>
 
-![alt text](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework01/Question%206.png?token=AJM7Q5QFQ2M26363OORI7HLAEHGH6)
 
-Turnaround time of each thread = 6 seconds
-{T1, T2, T3} has shortest average turnaround time at 4 Seconds. 
+{T1, T2, T3} has shortest average turnaround time at 10/3 seconds per thread.
 The name of the scheduling policy that produces this order is shortest job first scheduling. 
 
 
