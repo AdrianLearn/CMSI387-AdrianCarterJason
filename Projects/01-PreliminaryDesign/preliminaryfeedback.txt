@@ -1,0 +1,23 @@
+
+Hassan Hassan and Kevin Solis
+CMSI 387 Project Spring 2021
+Preliminary Design Document
+Evaluation and Feedback
+======================================================
+
+new command ~ random terminal command explanation
+
+This is an interesting idea!  Providing the terminal user with information
+about a "random" command can help the novice and even the experienced user
+to learn new things about the operations available from the command line!
+
+This will be very cool to see when you demo it!
+
+Full credit earned.
+
+Semester so far:
+   homework01 100.0% * 10 points = 10.00 points
+   delivery01 100.0% * 10 points = 10.00 points
+                          total:   20.00 out of 20 = 100.0% which is an A-plus
+
+Keep up the great work, you two!
