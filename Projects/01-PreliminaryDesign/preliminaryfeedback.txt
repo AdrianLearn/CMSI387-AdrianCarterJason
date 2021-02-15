@@ -1,15 +1,27 @@
 
-Hassan Hassan and Kevin Solis
+Jason Kalili, Adrian Leung, and Carter Pon
 CMSI 387 Project Spring 2021
 Preliminary Design Document
 Evaluation and Feedback
 ======================================================
 
-new command ~ random terminal command explanation
+new command ~ storage breakdown visualization
 
-This is an interesting idea!  Providing the terminal user with information
-about a "random" command can help the novice and even the experienced user
-to learn new things about the operations available from the command line!
+This is an interesting idea!  It's not really a kernel modification though.
+If you can find a way to make sure it integrates tightly with some kernel
+functions or make it work as one of the common utilities package, then this
+will be a VERY cool project.
+
+It is gonna be difficult, though, because of the gui-driven nature of the
+display.  Making windows pop up and then displaying things in them can be a
+beast to get working properly.
+
+Still, I don't want to rain on your parade, and I'm sure that the three of
+you can pull it off!
+
+Looks like the "modules" you are listing are really directories where these
+various parts of the system are located.  That's not *quite* what is meant by
+the term "modules", but it's a good start.
 
 This will be very cool to see when you demo it!
 
