@@ -1,5 +1,8 @@
+
+## Homework 2
 ### 1. In the mutex-locking pseudocode of Figure 4.10 on page 111, there are two consecutive steps that remove the current thread from the runnable threads and then unlock the spinlock. Because spinlocks should be held as briefly as possible, we ought to consider whether these steps could be reversed, as shown in Figure 4.28 [on page 148]. Explain why reversing them would be a bad idea by giving an example sequence of events where the reversed version malfunctions.
 
+<p style = "margin:2%; font-size:14px; line-height:1.8"> To call unlock on a mutex, the mutex must be owned by the current thread. If this condition is not met, anything could happen. This undefined behavior can cause problems due to the random nature of the  situation - crashing or possible memory bug. For example, [Example here] </p>
 
 ### 2. Suppose the first three lines of the audit method in Figure 4.27 on page 144 were replaced by the following two lines:
  ```java
@@ -7,6 +10,8 @@ int seatsRemaining = state.get().getSeatsRemaining();
 int cashOnHand = state.get().getCashOnHand();
 ```
 ### Explain why this would be a bug.
+
+<p style = "margin:2%; font-size:14px; line-height:1.8">This would be a bug because of the nature of AtomicReference's support for nonblocking synchronization. The first line in Figure 4.27 capures a snapshot of the current state that will then be consistent across all uses of that State object. Should we remove that snapshot and instead directly reference state.get(), calls to getSeatsRemaining and getCashOnHand would appear inconsistent and cause possible problems. </p>
 
 ### 3. <b>IN JAVA:</b> Write a test program in Java for the BoundedBuffer class of Figure 4.17 on page 119 of the textbook.
 
