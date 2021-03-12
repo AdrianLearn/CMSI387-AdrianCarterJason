@@ -2,7 +2,7 @@
 
 ### 1. In the mutex-locking pseudocode of Figure 4.10 on page 111, there are two consecutive steps that remove the current thread from the runnable threads and then unlock the spinlock. Because spinlocks should be held as briefly as possible, we ought to consider whether these steps could be reversed, as shown in Figure 4.28 [on page 148]. Explain why reversing them would be a bad idea by giving an example sequence of events where the reversed version malfunctions.
 
-<p style = "margin:2%; font-size:16px; line-height:1.8"> To call unlock on a mutex, the mutex must be owned by the current thread. If this condition is not met, anything could happen. This undefined behavior can cause problems due to the random nature of the  situation - crashing or possible memory bug. For example, [Example here] </p>
+<p style = "margin:2%; font-size:16px; line-height:1.8"> To call unlock on a mutex, the mutex must be owned by the current thread. If this condition is not met, anything could happen. This undefined behavior can cause problems due to the random nature of the  situation - crashing or possible memory bug. (possibly wrong, something about infinite loop) For example, [Example here] </p>
 
 ### 2. Suppose the first three lines of the audit method in Figure 4.27 on page 144 were replaced by the following two lines:
 
@@ -24,13 +24,13 @@ int cashOnHand = state.get().getCashOnHand();
 <p style = "margin:2%; font-size:16px; line-height:1.8"></p>
 
 ### 5. Suppose T1 writes new values into x and y and T2 reads the values of both x and y. Is it possible for T2 to see the old value of x but the new value of y? Answer this question three times: once assuming the use of two-phase locking, once assuming the read committed isolation level is used and is implemented with short read locks, and once assuming snapshot isolation. In each case, justify your answer.
-
-<p style = "margin:2%; font-size:16px; line-height:1.8"></p>
-
-### 6. Assume a page size of 4 KB and the page mapping shown in Figure 6.10 on page 227. What are the virtual addresses of the first and last 4-byte words in page 6? What physical addresses do these translate into?
-
-<p style = "margin:2%; font-size:16px; line-height:1.8"></p>
-
+    need help starting Different types of locking, is it possible for the second thread 
+    first one - two phase locking. (two phases to locking process 1. take everything you need, do what you do | unlock it all) in this case T1 is taking lock on x, y does what it needs to do, then unlocks x and y. If that is the process, is it possible for the second one to read a "bogus" value from that
+    second, very short reads - T1 locks x just long enough for what it needs to do, lock why (really short and quick) in this case, is it possible, while T1 has either of the resources locked, for T2 to come thorugh and read a bogus value out of it
+    third, snapshot isolation two step process (T1 takes the snapshot and modifies the snapshot and writes it back.) In this case, is it possible for T2 to read a bogus value
+    chapter 5
+### 6. Assume a page size of 4 KB and the page mapping shown in Figure 6.10 on page 225. What are the virtual addresses of the first and last 4-byte words in page 6? What physical addresses do these translate into?
+    need help starting
 ### 7. At the lower right of Figure 6.13 on page 236 are page numbers 1047552 and 1047553. Explain how these page numbers were calculated.
 
 <p style = "margin:2%; font-size:16px; line-height:1.8"></p>
@@ -41,4 +41,6 @@ int cashOnHand = state.get().getCashOnHand();
 
 ### 9. Figure 7.20 [page 324] contains a simple C program that loops three times, each time calling the fork() system call. Afterward it sleeps for 30 seconds. Compile and run this program, and while it is in its 30-second sleep, use the ps command in a second terminal window to get a listing of processes. How many processes are shown running the program? Explain by drawing a family tree of the processes, with one box for each process and a line connecting each (except the first one) to its parent.
 
-<p style = "margin:2%; font-size:16px; line-height:1.8"></p>
+<p style = "margin:2%; font-size:16px; line-height:1.8"> When running this program and running 'ps -eaf | [user]' in an external console, 8 processes are listed, all labeled as ./a.out. The threads were related by the following diagram.</p>
+
+![number9](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Homework/homework02/number9.png?token=AJM7Q5X5MCLI3567ZPMVJ53AKQHLQ)
