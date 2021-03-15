@@ -1,0 +1,77 @@
+
+
+CMSI 387 Operating Systems
+Results for Homework #2 Evaluation
+   Jason, Adrian, and Carter
+====================================
+
+Question 1 mutex reversing:          4/ 5 points
+   You make a good point, but that's not quite what happens.  If we swapped
+      the steps at lines 8 and 9 it would be a bad idea because, if the
+      current thread goes on the wait list and then the mutex is unlocked
+      BEFORE the current thread is removed from the runnable list, the
+      current thread would still be runnable when the mutex is unlocked and
+      could grab the mutex again right away.  This could lead to starvation
+      of other threads that are trying to gain access to the spinlock.
+
+Question 2 auditing code change:     5/ 5 points
+
+Question 3 test program:            20/20 points
+
+Question 4 notifyall() addition:    10/10 points
+   There, that wasn't so hard, huh?  :grin:
+
+Question 5a 2-phase locking:         2/ 5 points
+
+Question 5b short read locks:        2/ 5 points
+
+Question 5c snapshot isolation:      2/ 5 points
+
+Question 6 virtual address xlate:    5/ 5 points
+
+Question 7 calc. explanation:        5/ 5 points
+
+Question 8 loop 4096 analysis:      20/20 points
+   Nice work on the write-up, and the code looks good.  One thing to try, use
+      MANY different sizes for the array.  With 32GB of RAM, you're probably
+      gonna have a hard time getting the virtual memory manager to kick in,
+      but try it with arrays of size 500,000,000 or more and see if you can
+      get it to take longer.  You can also use the "time.h" library to time
+      the running of the program by calling time(0) and storing that before
+      the loop starts, then calling it again at the end and subtracting the
+      starting value.  I found that with 3,000,000,000 elements there was a
+      significant jump on my machine, and I also have a windows box with
+      32 GB of RAM....  worth a shot for the experimentation!
+
+Question 9 fork() tree:             15/15 points
+   For this one, double check that your PIDs and PPIDs are lining up as you
+      have drawn them on the diagram.  Try using the command line command
+      "ps -eaf | grep multiforker" to get the results.  You should see that
+      there is a different hierarchy when you trace the PIDs to their PPIDs,
+      something like this:
+
+                        7739
+                          |
+                 +------7789-------+
+                 |        |        |
+                 |        |        |
+         +-----7790     7791     7792
+         |       |        |
+         |       |        |
+       7793    7795     7794
+         |
+         |
+       7796
+
+
+Total 90 out of 100 = 90.00% which is an A-minus
+
+Comments:
+---------
+Very nice work here on what you've done...
+
+Looks like the three parts of problem 5 aren't quite complete?  You have all
+the notes down, so you just need to complete the answers.  You earn partial
+credit for it, but finish it off and I'll re-evaluate.  Just let me know.
+
+Otherwise, keep up the good work!
