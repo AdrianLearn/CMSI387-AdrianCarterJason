@@ -13,7 +13,7 @@ Module   | Description
 It seems that the best way to achieve our objective is to modify the current existing /df module rather than implement a new one at this current point in time. If circumstances change we will adapt our implementation to achieve our objective.
 
 ## <br>2.3 – Class diagram showing affected modules [and any new modules] and how they related to one another 
-![Class Diagram](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/main/Projects/02-DetailedDesign/2.3.png?token=AJM7Q5XYFQCSQQI4NAOIK3DALP6OQ)
+![Class Diagram](https://raw.githubusercontent.com/AdrianLearn/CMSI387-AdrianCarterJason/6874e18b105c6433c1f36e6c151d906849fba38d/Projects/02-DetailedDesign/2.3.png?token=AJM7Q5QCMRPT7JWKET5JWKDAM5PQO)
 
 Argument | Description
 ---------|------------
