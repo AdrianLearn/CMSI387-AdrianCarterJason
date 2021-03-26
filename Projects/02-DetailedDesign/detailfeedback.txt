@@ -1,0 +1,31 @@
+
+Jason Kalili, Adrian Leung, and Carter Pon
+CMSI 387 Project Spring 2021
+Detailed Design Document
+Evaluation and Feedback
+======================================================
+
+modified "df" command ~ storage breakdown visualization
+
+I'm really looking forward to this one!  Having something like this in Linux
+has been needed for a while, IMHO.
+
+On your diagram, did you intentionally omit the text in the legend?  It sort
+of looks like there was something intended to be there, otherwise it just
+looks like "raspberry red, lemon yellow, and orange orange"... *grin*
+
+Interesting way, though, to highlight the different command switches you'll
+be using/profiding!  I like it......
+
+This will be very cool to see when you demo it!
+
+Full credit earned.
+
+Semester so far:
+   homework01 100.0% * 10 points = 10.00 points
+   homework02  90.0% * 10 points =  9.00 points
+   delivery01 100.0% * 10 points = 10.00 points
+   delivery02 100.0% * 10 points = 10.00 points
+                          total:   39.00 out of 40 = 97.50% which is an A-plus
+
+Keep up the great work, you three!
