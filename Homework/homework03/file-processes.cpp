@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
-#include <iostream>
+//#include <iostream>
 #include <fcntl.h>
-#include <sys/wait.h>
+//#include <sys/wait.h>
 #include <sys/stat.h>
 using namespace std;
 int main()
@@ -15,7 +15,7 @@ int main()
     }
     else if (returnedValue == 0)
     {
-        if (close(STDOUT_FILENO) < 0)
+        if (close(STDIN_FILENO) < 0)
         {
             perror("error closing standard output");
             return -1;
@@ -23,13 +23,13 @@ int main()
         // When there is no error, open returns the smallest file
         // descriptor not already in use by this process, so having
         // closed STDOUT_FILENO, the open should reuse that number.
-        if (open("my-processes", O_WRONLY | O_CREAT | O_TRUNC,
-                 S_IRUSR | S_IWUSR) < 0)
+        //possible STDIN_FILENO
+        if (open("/etc/passwd", O_RONLY| S_IUSR) < 0)
         {
             perror("error opening my-processes");
             return -1;
         }
-        execlp("ps", "ps", "l", NULL); // ps with option letter l
+        execlp("tr", "tr", "a-z", "A-Z", NULL); // ps with option letter l
         perror("error executing ps");
         return -1;
     }
