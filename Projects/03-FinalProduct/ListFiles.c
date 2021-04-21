@@ -73,26 +73,26 @@ int typing(char *str)
         !strcmp(file, ".pdf") || !strcmp(file, ".rtf") ||
         !strcmp(file, ".ppt"))
     {
-        printf("document file found ");
+        printk("document file found ");
         documentFileSize += size;
     }
     else if (file && !strcmp(file, ".mp4") || !strcmp(file, ".avi") ||
              !strcmp(file, ".m4v") || !strcmp(file, ".mov") ||
              !strcmp(file, ".mpg") || !strcmp(file, ".wmv"))
     {
-        printf("video file found ");
+        printk("video file found ");
         videoFileSize += size;
     }
     else if (file && !strcmp(file, ".jpeg") || !strcmp(file, ".jpg") ||
              !strcmp(file, ".gif") || !strcmp(file, ".png") || !strcmp(file, ".ico"))
     {
-        printf("picture file found ");
+        printk("picture file found ");
         pictureFileSize += size;
     }
     else if (file && !strcmp(file, ".mp3") || !strcmp(file, ".wav") ||
              !strcmp(file, ".cda") || !strcmp(file, ".mid") || !strcmp(file, ".mpa"))
     {
-        printf("audio file found ");
+        printk("audio file found ");
         audioFileSize += size;
     }
     else if (file && !strcmp(file, ".bat") || !strcmp(file, ".exe") ||
@@ -100,12 +100,12 @@ int typing(char *str)
              !strcmp(file, ".c") || !strcmp(file, ".cpp") || !strcmp(file, ".class") ||
              !strcmp(file, ".h"))
     {
-        printf("Application file found ");
+        printk("Application file found ");
         applicationFileSize += size;
     }
     else
     {
-        printf("System file/Other file");
+        printk("System file/Other file");
         otherFileSize += size;
     }
     totalSize += size;
@@ -119,27 +119,27 @@ int run(void)
     DIR *dr = opendir(".");
     if (dr == NULL)
     {
-        printf("Could not open current directory");
+        printk("Could not open current directory");
         return 0;
     }
     while ((de = readdir(dr)) != NULL)
     {
         if (isDirectory(de->d_name) && checkNotDot(de->d_name))
         {
-            printf("found dir: %s\n", de->d_name);
-            printf("entering Directory: %s\n", de->d_name);
+            printk("found dir: %s\n", de->d_name);
+            printk("entering Directory: %s\n", de->d_name);
             chdir(de->d_name);
             run();
         }
         else if (checkNotDot(de->d_name))
         {
             typing(de->d_name);
-            printf("size: %f ", checkSize(de->d_name));
-            printf("%s\n", de->d_name);
-            printf("running total: %f\n\n", totalSize);
+            printk("size: %f ", checkSize(de->d_name));
+            printk("%s\n", de->d_name);
+            printk("running total: %f\n\n", totalSize);
         }
     }
-    printf("exiting directory\n");
+    printk("exiting directory\n");
     chdir("..");
     return 0;
 }
@@ -149,15 +149,15 @@ void printProgress(char *type, char *color, double percentage, double size)
     int val = (int)(percentage * 100);
     int lpad = (int)(percentage * PBWIDTH);
     int rpad = PBWIDTH - lpad;
-    printf("%s", color);
-    printf("\r %3d%% [%.*s%*s] %s (%f mb)\n", val, lpad, PBSTR, rpad, "", type, size);
+    printk("%s", color);
+    printk("\r %3d%% [%.*s%*s] %s (%f mb)\n", val, lpad, PBSTR, rpad, "", type, size);
     fflush(stdout);
 }
 
 int main(void)
 {
     run();
-    printf("Total File Size: %f mb\n", totalSize);
+    printk("Total File Size: %f mb\n", totalSize);
     printProgress("Videos ", GREEN, videoFileSize / totalSize, videoFileSize);
     printProgress("Documents", YELLOW, documentFileSize / totalSize, documentFileSize);
     printProgress("Sounds", BLUE, audioFileSize / totalSize, audioFileSize);
