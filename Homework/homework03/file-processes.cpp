@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
-//#include <iostream>
+#include <iostream>
 #include <fcntl.h>
-//#include <sys/wait.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
 using namespace std;
 int main()
@@ -24,7 +24,7 @@ int main()
         // descriptor not already in use by this process, so having
         // closed STDOUT_FILENO, the open should reuse that number.
         //possible STDIN_FILENO
-        if (open("/etc/passwd", O_RONLY | S_IUSR) < 0)
+        if (open("/etc/passwd", O_RDONLY | S_IWUSR) < 0)
         {
             perror("error opening my-processes");
             return -1;
