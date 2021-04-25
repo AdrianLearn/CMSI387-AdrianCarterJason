@@ -1,10 +1,8 @@
 #include <unistd.h>
 #include <stdio.h>
-//#include <iostream>
 #include <fcntl.h>
-//#include <sys/wait.h>
+#include <sys/wait.h>
 #include <sys/stat.h>
-using namespace std;
 int main()
 {
     pid_t returnedValue = fork();
@@ -24,7 +22,7 @@ int main()
         // descriptor not already in use by this process, so having
         // closed STDOUT_FILENO, the open should reuse that number.
         //possible STDIN_FILENO
-        if (open("/etc/passwd", O_RONLY | S_IUSR) < 0)
+        if (open("/etc/passwd", O_RDONLY | S_IWUSR) < 0)
         {
             perror("error opening my-processes");
             return -1;
@@ -40,7 +38,6 @@ int main()
             perror("error waiting for child");
             return -1;
         }
-        cout << "Note the parent still has the old standard output."
-             << endl;
+        printf("Note the parent still has the old standard output.");
     }
 }
