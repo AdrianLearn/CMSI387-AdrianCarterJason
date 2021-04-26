@@ -5,13 +5,13 @@ CMSI 387 - Operating Systems
 
 Question 1: dining philosophers program:   18.00 out of 20 possible
 Question 2: why immune explanation     :   10.00 out of 10 possible
-Question 3: file processing "C" program:    0.00 out of 20 possible
+Question 3: file processing "C" program:   20.00 out of 20 possible
 Question 4: mmap program "C" program   :   18.00 out of 20 possible
 Question 5: appropriate class explained:   10.00 out of 10 possible
 
 Total possible points:     80.00 points
-           your score:     56.00 points
-                total:     56.00/80.00 = 70.00% which is a C
+           your score:     76.00 points
+                total:     76.00/80.00 = 95.00% which is an A
 
 Comments:
 ---------
@@ -31,14 +31,20 @@ I created a testfile.txt document for it to read, but the program can't
 open the file.  It does run, though, just doesn't do what it's supposed to
 do.  Most of the credit is earned for this one.
 
+==============
+RE-EVALUATED AFTER POSTING UPDATE FOR PROBLEM #3
+
+All good now!  Full credit earned.
+See updated scores below.
 
 ==============
 SEMESTER SO FAR, COMING UP TO FINAL EXAM:
    homework01:  12/12 = 100.00% of 10 pts = 10.00 pts
    homework02:  97/97 = 100.00% of 10 pts = 10.00 pts
-   homework03:  80/80 = 100.00% of 10 pts = 10.00 pts
-        total:                              30.00 pts out of 30.00
-                        which is 100.00% which is an A-plus
+   homework03:  76/80 =  95.00% of 10 pts =  9.50 pts
+        total:                              29.50 pts out of 30.00
+                        which is 98.33% which is an A-plus
 
 Get back to me with a working program for problem 3 and I'll re-evaluate to
 get you some more points on this one.
+
